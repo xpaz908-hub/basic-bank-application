@@ -4,7 +4,8 @@
         "accounts",
         "main",
         "views",
-        "customers"
+        "customers",
+        "users"
     ],
     "java.project.referencedLibraries": []
 }
