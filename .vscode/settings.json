@@ -1,11 +1,6 @@
 {
     "java.project.sourcePaths": [
-        ".",
-        "accounts",
-        "main",
-        "views",
-        "customers",
-        "users"
+        "src"
     ],
     "java.project.referencedLibraries": []
 }
