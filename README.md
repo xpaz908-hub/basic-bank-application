@@ -1,10 +1,11 @@
 # VERY basic cli bank
 
-#### overview
+## overview
 
 (work in progress)
 
-###### --------------------------------
-**this is** *learning markdown*
->syntax
-###### --------------------------------
+### --------------------------------
+**this is** me *learning markdown* ~~syntax~~
+### --------------------------------
+
+> thank you for visiting :D
