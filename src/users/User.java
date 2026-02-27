@@ -13,27 +13,18 @@ abstract class User {
         this.id = id;
     }
     protected String getName() {
-        return name;
+        return this.name;
     }
     protected String getEmail() {
-        return email;
+        return this.email;
     }
     protected String getPassword() {
-        return password;
+        return this.password;
     }
     protected int getId() {
-        return id;
+        return this.id;
     }
-    protected void setName(String name) {
-        this.name = name;
-    }
-    protected void setEmail(String email) {
-        this.email = email;
-    }
-    protected void setPassword(String password) {
-        this.password = password;
-    }
-    protected void setId(int id) {
-        this.id = id;
+    protected void changePassword(String newPassword) {
+        this.password = newPassword;
     }
 }
