@@ -14,17 +14,28 @@ Created the repository and started on creating (my attempt at) an organized file
     - /views
     - /account
 
-- boilerplate for user parent class and admin + customer child class
+- boilerplate for "user" parent class and "admin" + "customer" child class
 
 ## 2026-28-02
 Done with the welcome view and created a util package for future utilities made for convieniece.\
-
+I am also using basic FileI/O to store and retrieve user data through cli before trying web and then using a DB.\
+Will be storing passwords using hashing, however I am first experimenting and comparing insecure vs secure practices.
 
 ### Added
 - /util and clearTerminal method for reusability
-##### /src/views
+**/src/views**
 - LoginView.java
 - RegisterView.java
-##### /src/util
+**/src/util**
 - FileIO.java
+- IdGenerator.java
+- Console.java
+
+- RegisterView PoC finished
+- created FileIO util methods
+
+### Notes
+- renamed "main" to "core"
+- going to make exceptions package for custom exceptions
+- 
 
