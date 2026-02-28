@@ -4,6 +4,7 @@ import accounts.Account;
 
 public class Customer extends User {
     private ArrayList<Account> customerAccounts;  
+    public static String customerDatabase = "customer_database.txt";
 
     public Customer(String name, String email, String password, int id, ArrayList<Account> customerAccounts) {
         super(name, email, password, id);
