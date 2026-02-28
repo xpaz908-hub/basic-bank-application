@@ -1,7 +1,10 @@
 package main;
+import views.WelcomeView;
+
 public class Main {
     public static void main(String[] args) {
-        
+        WelcomeView welcomeView = new WelcomeView();
+        welcomeView.show();
     }
 }
 
