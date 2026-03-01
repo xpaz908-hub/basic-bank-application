@@ -1,16 +1,13 @@
 package views;
-
 import java.util.Scanner;
-
-import users.Customer;
 import util.*;
 
-public class RegisterView {
-    private Scanner scan;
+public class RegisterView extends View {
 
     public RegisterView(Scanner scan) {
-        this.scan = scan;
+        super(scan);
     }
+    @Override
     public void show() {
         while (true) { 
             Console.clearTerminal();
@@ -21,29 +18,14 @@ public class RegisterView {
             String password = scan.next();
 
             try {
-                createAccount(name, password);
-                break;
+                AuthService.createAccount(name, password);
             } catch (Exception e) {
                 System.out.println("Error creating account: " + e.getMessage());
             }
+            System.out.println("Account created successfully!\n\nPress Enter to log in.");
+            super.returnToWelcomeView();
         }   
     }
-    private void createAccount(String name, String password) {
-        FileIO.createFile(Customer.customerDatabase);
-        int newId = IdGenerator.generateRandomID();
-        Customer newCustomer = new Customer(name, null, password, newId, null);
-        FileIO.writeFile(Customer.customerDatabase, FileIO.getCustomerData(newCustomer));
-        System.out.println("Account created successfully!\nPress Enter to return to the main menu.");
-        returnToMainMenu();
-    }
-    private void returnToMainMenu() {
-        scan.nextLine(); // Consume the newline left by nextDouble()
-        while (true) { 
-            if (scan.nextLine().isEmpty()) {
-                new WelcomeView(scan).show();
-                break;
-            } else
-                System.out.println("Invalid input, press ENTER.");
-        }
-    }
 }
+
+//TODO: add input validation, error handling, and password hashing as well as go back functionality
