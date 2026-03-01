@@ -1,9 +1,13 @@
 package main;
-import views.WelcomeView;
+import java.util.Scanner;
+import views.*;
+import users.*;
 
 public class Main {
     public static void main(String[] args) {
-        WelcomeView welcomeView = new WelcomeView();
+        Scanner scan = new Scanner(System.in);
+        User currentUser = null; // Placeholder
+        View welcomeView = new WelcomeView(scan);
         welcomeView.show();
     }
 }
