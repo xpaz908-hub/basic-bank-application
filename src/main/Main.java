@@ -1,13 +1,13 @@
-package core;
+package main;
 import java.util.Scanner;
 import views.*;
 import users.*;
 
-public class Core {
+public class Main {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
         User currentUser = null; // Placeholder
-        WelcomeView welcomeView = new WelcomeView(scan, currentUser);
+        View welcomeView = new WelcomeView(scan);
         welcomeView.show();
     }
 }

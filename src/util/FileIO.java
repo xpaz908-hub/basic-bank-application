@@ -10,7 +10,7 @@ public class FileIO {
             if (file.createNewFile()) 
                 System.out.println("\nFile " + filename + " created at " + file.getAbsolutePath());
             else
-                System.out.println("\nWriting to existing file " + filename);
+                System.out.println("\nWriting to " + filename + "...");
         } catch (Exception e) {
             System.out.println("Error creating file: " + e.getMessage());
         }

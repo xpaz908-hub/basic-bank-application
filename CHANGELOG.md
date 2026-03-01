@@ -19,23 +19,21 @@ Created the repository and started on creating (my attempt at) an organized file
 ## 2026-28-02
 Done with the welcome view and created a util package for future utilities made for convieniece.\
 I am also using basic FileI/O to store and retrieve user data through cli before trying web and then using a DB.\
-Will be storing passwords using hashing, however I am first experimenting and comparing insecure vs secure practices.
+Will be storing passwords using hashing, however I am first experimenting and comparing insecure vs secure practices. Also plan on making custom exceptions but I am just reminding future me.
 
 ### Added
-- /util and clearTerminal method for reusability
-**/src/views**
-- LoginView.java
-- RegisterView.java
 **/src/util**
+- /util directory
 - FileIO.java
-- IdGenerator.java
+- AuthService.java
 - Console.java
+- respected helper methods for each class
+
+**/src/views**
+- View.java parent class
+- LoginView.java and RegisterView.java child classes
 
 - RegisterView PoC finished
 - created FileIO util methods
 
-### Notes
-- renamed "main" to "core"
-- going to make exceptions package for custom exceptions
-- 
-
+## 2026-01-03
