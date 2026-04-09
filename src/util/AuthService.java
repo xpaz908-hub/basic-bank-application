@@ -29,9 +29,9 @@ public class AuthService {
                     currentPass = line.substring(9).trim();
                 else if (line.contains("ID"))
                     currentId = Integer.parseInt(line.substring(5).trim());
-                else if (currentName.equals(name) && currentPass.equals(password)) {
-                    return new Customer(currentName, null, currentPass, currentId, null);
-                }
+                else
+                    if (currentName.equals(name) && currentPass.equals(password))
+                        return new Customer(currentName, null, currentPass, currentId, null);
             }
         } catch (Exception e) {
             System.out.println("An error occurred while authenticating: " + e.getMessage());

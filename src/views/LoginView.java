@@ -17,9 +17,8 @@ public class LoginView extends View {
                 System.out.print("Enter your name: ");
                 String name = viewScanner.nextLine();
                 Utils.validateInput(name);
-                if (name.equalsIgnoreCase("exit")) {
+                if (name.equalsIgnoreCase("exit"))
                     return new WelcomeView(viewScanner);
-                }
                 System.out.print("Enter your password: ");
                 String password = viewScanner.nextLine();
                 Utils.validateInput(password);
@@ -29,8 +28,6 @@ public class LoginView extends View {
                 } else {
                     System.out.println("Invalid credentials. Please try again.");
                 }
-            } catch (IllegalArgumentException e) {
-                System.out.println("Invalid input. Please try again.");
             } catch (Exception e) {
                 System.out.println("An error occurred. Please try again. Error: " + e.getMessage());
             }
