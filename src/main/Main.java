@@ -1,17 +1,22 @@
 package main;
 import java.util.Scanner;
 import views.*;
-import users.*;
 
 public class Main {
     public static void main(String[] args) {
-        Scanner scan = new Scanner(System.in);
-        User currentUser = null; // Placeholder
-        View welcomeView = new WelcomeView(scan);
-        welcomeView.show();
+        Scanner mainScanner = new Scanner(System.in);
+        View currentView = new WelcomeView(mainScanner);
+        while (currentView != null) {
+            try {
+                currentView = currentView.show();
+            } catch (Exception e) {
+                System.out.println("A critical error occurred: " + e.getMessage() + "\nPlease restart the application.");
+                break;
+            }
+        }
+        System.out.print("\nThank you for using BankStation!");
     }
 }
-
 /*
 basics of a banking system:
 
