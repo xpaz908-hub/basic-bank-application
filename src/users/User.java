@@ -12,19 +12,16 @@ public abstract class User {
         this.password = password;
         this.id = id;
     }
-    protected String getName() {
+    public String getName() {
         return this.name;
     }
-    protected String getEmail() {
+    public String getEmail() {
         return this.email;
     }
-    protected String getPassword() {
+    public String getPassword() {
         return this.password;
     }
-    protected int getId() {
+    public int getId() {
         return this.id;
-    }
-    protected void changePassword(String newPassword) {
-        this.password = newPassword;
     }
 }

@@ -3,28 +3,34 @@ import java.util.Scanner;
 import util.*;
 
 public class RegisterView extends View {
-
     public RegisterView(Scanner scan) {
         super(scan);
     }
     @Override
-    public void show() {
+    public View show() {
         while (true) { 
-            Console.clearTerminal();
-            System.out.println("Register for a new account.\n");
-            System.out.print("Enter your name: ");
-            String name = scan.next();
-            System.out.print("Enter a password: ");
-            String password = scan.next();
-
+            Utils.clearTerminal();
+            System.out.println("Register for a new account. Type 'exit' to go back.\n");
             try {
+                System.out.print("Enter your name: ");
+                String name = viewScanner.nextLine();
+                Utils.validateInput(name);
+                if (name.equalsIgnoreCase("exit")) {
+                    return new WelcomeView(viewScanner);
+                } 
+                System.out.print("Enter a password: ");
+                String password = viewScanner.nextLine();
+                Utils.validateInput(password);
                 AuthService.createAccount(name, password);
+                System.out.println("Account created successfully!\n\nPress Enter to log in.");
+                viewScanner.nextLine();
+                return new WelcomeView(viewScanner);
+            } catch (IllegalArgumentException e) {
+                System.out.println("Invalid input. Please try again.");
             } catch (Exception e) {
-                System.out.println("Error creating account: " + e.getMessage());
+                System.out.println("An error occurred. Please try again.");
             }
-            System.out.println("Account created successfully!\n\nPress Enter to log in.");
-            super.returnToWelcomeView();
-        }   
+        }
     }
 }
 

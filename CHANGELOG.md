@@ -36,4 +36,12 @@ Will be storing passwords using hashing, however I am first experimenting and co
 - RegisterView PoC finished
 - created FileIO util methods
 
-## 2026-01-03
+## 2026-08-04
+Took a month off after breaking my wrist but came back to this for more OOP and general practice. RegisterView works using basic text file io and made a log in system by reading the file, checking if the line contains "Name", "Password", etc and then grabs data to create a customer object. Code works but could be better, still have lots to practice. Next I plan on actually adding more customer data, like an email, bank accounts, balance, etc.
+
+### Added
+- login system
+- register system using file io
+- cleaned main.java
+- fixing user visibility in HomeView.java
+- added 
